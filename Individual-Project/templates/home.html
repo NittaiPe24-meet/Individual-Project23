@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>netroulette</title>
+  <link href="{{url_for('static', filename = 'css/style.css')}}" rel="stylesheet" type="text/css" />
+  <script type="text/javascript">
+    function roll() {
+      document.getElementById("bn").remove();
+      document.getElementById("link").innerText = "???";
+    }
+
+  </script>
+</head>
+
+<body>
+  <h1>NetRoulette</h1>
+  <p>pray you won't get hacked</p>
+
+  <a href="/">
+  <button id="pybutton" onclick="">aaa<button>
+  </a>
+
+
+  <a id="link" href="{{site}}">
+  <button id="bn" onclick=roll()>try your luck</button>
+</a>
+  <p id="Leprechaun">** lucky you! you have found a Leprechaun! **</p>
+  <img src="https://media.istockphoto.com/id/511013050/nl/vector/roulette-wheel-drawing.jpg?s=612x612&w=0&k=20&c=MGi2sbVdyelnehlo7h91vwYJXKeVFYMTtFQBIWOrkk4="></img>
+  <div/>
+    <a href="/site_of_the_week">**site of the week**</a>
+    <div/>
+    <a href="/about">about</a>
+
+
+  
+</body>
+
+</html>
