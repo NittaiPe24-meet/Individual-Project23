@@ -6,3 +6,104 @@ html {
 #Leprechaun {
   color: white;
 }
+
+#signup {
+  background-image: url("https://bouncemagazine.co.uk/wp-content/uploads/2023/04/Screenshot-2023-04-10-at-16.44.38.png");
+  color: white;
+}
+
+#title_up {
+  font-size: 100px;
+  text-shadow: 2px 2px 4px #000000;
+}
+
+#label_up1{
+  font-size: 50px;
+  text-shadow: 2px 2px 4px #000000;
+}
+
+#label_up2{
+  font-size: 50px;
+  text-shadow: 2px 2px 4px #000000;
+}
+
+
+#submit_up {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #66ff66;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+#submit_up span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+#submit_up span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+#submit_up: hover span {
+  padding-right: 25px;
+}
+
+#submit_up: hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+#button_up {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #66ff66;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+#button_up span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+#button_up span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+#button_up: hover span {
+  padding-right: 25px;
+}
+
+#button_up: hover span:after {
+  opacity: 1;
+  right: 0;
+}

@@ -2,7 +2,6 @@ from flask import Flask, render_template, request, redirect, url_for, flash
 from flask import session as login_session
 import pyrebase
 import random
-# import amogus
 
 
 app = Flask(__name__, template_folder='templates', static_folder='static')
@@ -22,7 +21,7 @@ firebase = pyrebase.initialize_app(config)
 auth = firebase.auth()
 db = firebase.database()
 
-
+extention = ["net", ".com", ".co", ".biz", ".site", ".cc"];
 
 
 
@@ -50,22 +49,27 @@ def signup():
             print(e)
             error = "Authentication failed"
     return render_template("signup.html")
-# Your code should be below
 
 
-@app.route("/")
+
+@app.route("/",methods=['GET','POST'])
 def home():
-    extention = ["net", ".com", ".co", ".biz", ".site", ".cc"];
-    def spin():
-        site = ""
-        num = random.randint(1, 16)
-        Letter = random.choice(string.ascii_letters)
-        for i in range(num):
-            site = site + Letter
-        num = random.randint(0,6)
-        site = site + (extention[num])
+    if(login_session['user']):
+        return render_template("home.html")
+    else:
+        return redirect(url_for('signin'))
 
-    return render_template("home.html")
+
+def spin():
+    site = ""
+    num = random.randint(1, 16)
+    Letter = random.choice(string.ascii_letters)
+    for i in range(num):
+        site = site + Letter
+        num = random.randint(0,6)
+    site = site + (extention[num])
+
+
 
 @app.route("/about")
 def about():
@@ -73,9 +77,19 @@ def about():
 
 @app.route("/site_of_the_week")
 def site_of_the_week():
+
     return render_template("site_of_the_week.html")
 
-# Your code should be above
+@app.route("/site_of_the_week/vote")
+def vote():
+    return render_template("vote.html")
+
+
+
+
+
+
+
 
 if __name__ == "__main__":  # Makes sure this is the main process
     app.run(debug=True)

@@ -3,11 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <title>Signup</title>
+      <link href="{{url_for('static', filename = 'css/style.css')}}" rel="stylesheet" type="text/css" />
+
+
 </head>
-<body>
+<body id="signup">
+    <div id="div_up">
     <form method="post" action="/signup">
         <!-- Heading -->
-        <h4>
+        <h4 id="title_up">
             Sign Up
         </h4>
 
@@ -15,7 +19,7 @@
 
         <!-- Email -->
         <div>
-            <label>Email Address*</label>
+            <label id="label_up1">Email Address*</label>
             <div>
                 <input type="email"  name="email" id="email" required>
             </div>
@@ -23,7 +27,7 @@
 
         <!-- Password -->
         <div>
-            <label>Password*</label>
+            <label id="label_up2">Password*</label>
             <div class="input-group">
                 <input type="password"  name="password" minlength="6" required>
             </div>
@@ -31,10 +35,11 @@
 
 
         <div>
-            <input type="submit"/>
+            <input id="submit_up" type="submit"/>
         </div>
     </form>
     <br>
-    <a href="/"><button>signin</button></a>
+    <a href="/signin"><button id="button_up">signin</button></a>
+    </div>
 </body>
 </html>

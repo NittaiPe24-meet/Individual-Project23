@@ -2,32 +2,34 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Login</title>
+    <title>signin</title>
+      <link href="{{url_for('static', filename = 'css/style.css')}}" rel="stylesheet" type="text/css" />
+
 </head>
-<body>
+<body id="signup">
     <form method="post" action="/">
-        <h4>
-        Log In
+        <h4 id="title_up">
+        Sign In
         </h4>
 
         <div>
-            <label>Email address*</label>
+            <label id="label_up1">Email Address*</label>
             <div>
                 <input type="email"  name="email" id="emailStr" required>
             </div>
         </div>
         <div>
-            <label>Password*</label>
+            <label id="label_up2">Password*</label>
             <div class="input-group">
                 <input type="password"  name="password" minlength="6">
             </div>
         </div>
         
         <div>
-            <input type="submit"/>
+            <input id="submit_up" type="submit"/>
         </div>
     </form>
     <br>
-    <a href="/signup"><button>signup</button></a>
+    <a  href="/signup"><button id="button_up">signup</button></a>
 </body>
 </html>
