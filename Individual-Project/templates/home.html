@@ -38,10 +38,10 @@
  -->
 <script>
 var links = [
-              "google.com",
-              "youtube.com",
-              "reddit.com",
-              "apple.com"]
+              "theuselessweb.site/ducksarethebest.com",
+              "eelslap.com",
+              "www.thisiswhyimbroke.com",
+              "pointerpointer.com"]
 
            var openSite = function() {
               // get a random number between 0 and the number of links
@@ -50,9 +50,9 @@ var links = [
               randIdx = parseInt(randIdx, 10);
               // construct the link to be opened
               var link = 'http://' + links[randIdx];
+     document.getElementById('bn').onclick=window.open(link);
+     location.reload();
 
-     return link;
-     window.alert(link);
 
     };
 </script>
@@ -70,7 +70,7 @@ var links = [
 
   <!-- <a id="link" href="{{site}}"> -->
 
-    <a href="javascript:openSite()">
+    <a id="ba" href="javascript:openSite()">
 
   <button id="bn">try your luck</button>
 
@@ -80,6 +80,7 @@ var links = [
   <img src="https://media.istockphoto.com/id/511013050/nl/vector/roulette-wheel-drawing.jpg?s=612x612&w=0&k=20&c=MGi2sbVdyelnehlo7h91vwYJXKeVFYMTtFQBIWOrkk4="></img>
   <div/>
     <a href="/signup">Create Account</a>
+    <div/>
     <a href="/site_of_the_week">**Site Of The Week**</a>
     <div/>
     <a href="/about">About</a>
