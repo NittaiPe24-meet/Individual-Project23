@@ -25,7 +25,6 @@ extention = ["net", ".com", ".co", ".biz", ".site", ".cc"];
 
 
 
-
 @app.route('/signin', methods=['GET', 'POST'])
 def signin():
     error = ""
@@ -63,7 +62,11 @@ def signup():
 @app.route("/",methods=['GET','POST'])
 def home():
     if(login_session['user']):
-        return render_template("home.html")
+        try:
+            password = db.child('Users').child(login_session['user']['localId']).get().val()['password']
+            return render_template("home.html", password = password)
+        except:
+            return render_template('home.html')
     else:
         return redirect(url_for('signin'))
 
