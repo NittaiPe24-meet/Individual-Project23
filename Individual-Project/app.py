@@ -26,9 +26,18 @@ extention = ["net", ".com", ".co", ".biz", ".site", ".cc"];
 
 
 
-
 @app.route('/signin', methods=['GET', 'POST'])
 def signin():
+    error = ""
+    if request.method == 'POST':
+        email = request.form['email']
+        password = request.form['password']
+        try:
+            login_session['user'] = auth.sign_in_with_email_and_password(email, password)
+            return redirect(url_for('home'))
+        except Exception as e:
+            print("SIGN IN ERROR:", e)
+            error = "Authentication failed"
     return render_template("signin.html")
 
 
@@ -49,7 +58,6 @@ def signup():
             print(e)
             error = "Authentication failed"
     return render_template("signup.html")
-
 
 
 @app.route("/",methods=['GET','POST'])
@@ -83,6 +91,14 @@ def site_of_the_week():
 @app.route("/site_of_the_week/vote")
 def vote():
     return render_template("vote.html")
+
+@app.route("/display_user")
+def display_user():
+    # Gets the current user’s information from the database
+    UID = login_session['user']['localId']
+    user = db.child("Users").child(UID).get().val()
+    return render_template("account.html", email=user["email"])
+
 
 
 
